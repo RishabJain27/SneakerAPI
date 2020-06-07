@@ -1,3 +1,5 @@
+//Sneaker API
+
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
