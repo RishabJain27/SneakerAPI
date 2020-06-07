@@ -1,4 +1,4 @@
-//Sneaker API
+//Sneaker API for all ips
 
 const express = require('express')
 const app = express()
