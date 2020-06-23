@@ -5,7 +5,7 @@ module.exports = router
 
 //GET user
 router.get('/:email/pass/:password', getUser, (req,res) => {
-    res.send(res.user);
+    res.send(res.user[0]);
 })
 
 //POST 
@@ -30,7 +30,6 @@ async function getUser(req,res,next){
     let user
     try {
         user = await User.find({email: req.params.email,password: req.params.password})
-        console.log(user)
         if(user.length == 0){
             return res.status(404).json({message: 'Cannot find user'})
         }
