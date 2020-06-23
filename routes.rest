@@ -9,3 +9,17 @@ GET http://localhost:3001/underarmourShoes
 
 ###
 GET http://localhost:3001/shoes
+
+###
+GET http://localhost:5000/user/rishabxjain@gmail.com/pass/fdfdhdh
+
+###
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+    "first": "testFirst",
+    "last": "testLast",
+    "email": "testEmail",
+    "password": "testPassword"
+}

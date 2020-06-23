@@ -3,6 +3,11 @@ const router = express.Router()
 const User = require('../models/user')
 module.exports = router
 
+//GET user
+router.get('/:email/pass/:password', getUser, (req,res) => {
+    res.send(res.user);
+})
+
 //POST 
 router.post('/', async (req, res) => {
     const user = new User({
@@ -19,3 +24,21 @@ router.post('/', async (req, res) => {
         res.status(400).json({message: err.message})
     }
 })
+
+
+async function getUser(req,res,next){
+    let user
+    try {
+        user = await User.find({email: req.params.email,password: req.params.password})
+        console.log(user)
+        if(user.length == 0){
+            return res.status(404).json({message: 'Cannot find user'})
+        }
+    } catch (error) {
+        return res.status(500).json({message: err.message})
+    }
+
+    res.user = user
+    next()
+}
+
