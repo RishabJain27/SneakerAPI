@@ -32,4 +32,7 @@ app.use('/underarmourShoes', underarmourRouter)
 const shoesRouter = require('./routes/shoes')
 app.use('/shoes', shoesRouter)
 
+const userRouter = require('./routes/user')
+app.use('/user', userRouter)
+
 app.listen(process.env.PORT || 5000, () => console.log('Server Started'))
