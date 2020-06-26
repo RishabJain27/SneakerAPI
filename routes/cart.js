@@ -32,6 +32,36 @@ router.post('/', async (req, res) => {
     }
 })
 
+//DELETE ONE
+router.delete('/:key/name/:name', getCartDel,async(req,res) => {
+
+try{
+    await res.cart.remove()
+    res.json({message: 'Deleted Item from Cart'})
+}
+catch(err){
+    res.status(500).json({message: err.message})
+}
+
+
+})
+
+
+
+async function getCartDel(req,res,next){
+    let cart
+    try {
+        cart = await Cart.find({key: req.params.key, name: req.params.name})
+        if(cart.length == 0){
+            return res.status(404).json({message: 'Cannot find item'})
+        }
+    } catch (error) {
+        return res.status(500).json({message: err.message})
+    }
+
+    res.cart = cart[0]
+    next()
+}
 
 async function getCart(req,res,next){
     let cart
