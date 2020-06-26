@@ -36,3 +36,6 @@ Content-Type: application/json
     "category": "testPassword",
     "gender": "genderTEst"
 }
+
+###
+GET http://localhost:5000/cart/test
