@@ -23,3 +23,16 @@ Content-Type: application/json
     "email": "testEmail",
     "password": "testPassword"
 }
+
+### 
+POST http://localhost:5000/cart
+Content-Type: application/json
+
+{
+    "key": "testFirst",
+    "name": "testLast",
+    "image_url": "testEmail",
+    "site": "testPassword",
+    "category": "testPassword",
+    "gender": "genderTEst"
+}

@@ -35,4 +35,7 @@ app.use('/shoes', shoesRouter)
 const userRouter = require('./routes/user')
 app.use('/user', userRouter)
 
+const cartRouter = require('./routes/cart')
+app.use('/cart', cartRouter)
+
 app.listen(process.env.PORT || 5000, () => console.log('Server Started'))
