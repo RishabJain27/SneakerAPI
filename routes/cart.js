@@ -21,6 +21,10 @@ router.post('/', async (req, res) => {
     })
 
     try {
+        let duplicate = await Cart.find({key: req.body.key, name: req.body.name})
+        if(duplicate.length > 0){
+            return res.status(400).json({message: "Already have item in your cart!"})
+        }
         const newCart = await cart.save()
         res.status(201).json(newCart);
     } catch(err) {

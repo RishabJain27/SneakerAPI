@@ -18,6 +18,10 @@ router.post('/', async (req, res) => {
     })
 
     try {
+        let duplicate = await User.find({email: req.body.email})
+        if(duplicate.length > 0){
+            return res.status(400).json({message: "Already have an account!"})
+        }
         const newUser = await user.save()
         res.status(201).json(newUser);
     } catch(err) {
