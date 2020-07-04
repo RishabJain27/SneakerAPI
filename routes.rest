@@ -8,7 +8,7 @@ GET http://localhost:3001/adidasShoes
 GET http://localhost:3001/underarmourShoes
 
 ###
-GET http://localhost:3001/shoes
+GET http://localhost:5000/shoes
 
 ###
 GET http://localhost:5000/user/rishabxjain@gmail.com/pass/fdfdhdh

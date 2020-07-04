@@ -20,6 +20,10 @@ const nikeSchema = new mongoose.Schema({
     gender: {
         type: String,
         required: true
+    },
+    brand: {
+        type: String,
+        required: true
     }
 })
 var collectionName = 'nike'
