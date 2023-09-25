@@ -3,8 +3,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
-const uri = "mongodb+srv://rjain9:Ilikepie16%21@cluster0-wgm3y.mongodb.net/test?retryWrites=true&w=majority";
-
+const uri = "mongodb+srv://rjain9:Ilikepie16@sneakers.1azjgzw.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true, dbName: 'Shoes'})
 const db = mongoose.connection
